@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="876" height="252" viewBox="0 0 876 252">
+  <rect x="0" y="0" width="876" height="252" fill="#0b1220" />
+  <text x="438" y="46" text-anchor="middle" font-family='&apos;JetBrainsMono Nerd Font&apos;, &apos;Symbols Nerd Font&apos;, &apos;JetBrains Mono&apos;, Inter, Roboto, &apos;Segoe UI&apos;, Helvetica, Arial, monospace, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;' font-size="20" fill="#e5e7eb" font-weight="700">Dev Gen 0 — First build team</text>
+<g transform="translate(24, 68)">
+  <defs>
+    <clipPath id="clip_DEV-GEN-0_0">
+      <circle cx="130" cy="58" r="40" />
+    </clipPath>
+  </defs>
+  <a xlink:href="https://github.com/Jimieee" target="_blank">
+    <rect rx="14" ry="14" x="0" y="0" width="260" height="160" fill="#0f172a" stroke="#1f2940" stroke-width="1" />
+    <image x="90" y="18" href="https://github.com/Jimieee.png?size=160" width="80" height="80" clip-path="url(#clip_DEV-GEN-0_0)" />
+    <text x="130" y="128" text-anchor="middle" font-family='&apos;JetBrainsMono Nerd Font&apos;, &apos;Symbols Nerd Font&apos;, &apos;JetBrains Mono&apos;, Inter, Roboto, &apos;Segoe UI&apos;, Helvetica, Arial, monospace, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;' font-size="14" fill="#e5e7eb">Francisco Jimenez</text>
+  </a>
+</g>
+<g transform="translate(308, 68)">
+  <defs>
+    <clipPath id="clip_DEV-GEN-0_1">
+      <circle cx="130" cy="58" r="40" />
+    </clipPath>
+  </defs>
+  <a xlink:href="https://github.com/1frencho" target="_blank">
+    <rect rx="14" ry="14" x="0" y="0" width="260" height="160" fill="#0f172a" stroke="#1f2940" stroke-width="1" />
+    <image x="90" y="18" href="https://github.com/1frencho.png?size=160" width="80" height="80" clip-path="url(#clip_DEV-GEN-0_1)" />
+    <text x="130" y="128" text-anchor="middle" font-family='&apos;JetBrainsMono Nerd Font&apos;, &apos;Symbols Nerd Font&apos;, &apos;JetBrains Mono&apos;, Inter, Roboto, &apos;Segoe UI&apos;, Helvetica, Arial, monospace, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;' font-size="14" fill="#e5e7eb">Marcos Alfaro</text>
+  </a>
+</g>
+</svg>
