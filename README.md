@@ -10,9 +10,14 @@ The build validates handles via GitHub API, generates **circular avatars**, **Ne
 2) Add one object per person (no roles needed):  
 ```json
 [
-  { "name": "Ana Dev", "handle": "anadev" },
-  { "name": "Juan Ops", "handle": "juanops" },
-  { "name": "Luis Backend", "handle": "luisbackend" }
+  {
+    "name": "Francisco Jimenez",
+    "handle": "Jimieee"
+  },
+  {
+    "name": "Marcos Alfaro",
+    "handle": "1frencho"
+  }
 ]
 ```
 3) Commit your change. **Do not modify**: `teams/DEV-GEN-0.json`, `scripts/`, `.github/`, or `public/` — the workflow will fail if you do.
@@ -24,9 +29,14 @@ The build validates handles via GitHub API, generates **circular avatars**, **Ne
 2) Agrega un objeto por persona (no se requiere rol):  
 ```json
 [
-  { "name": "Ana Dev", "handle": "anadev" },
-  { "name": "Juan Ops", "handle": "juanops" },
-  { "name": "Luis Backend", "handle": "luisbackend" }
+  {
+    "name": "Francisco Jimenez",
+    "handle": "Jimieee"
+  },
+  {
+    "name": "Marcos Alfaro",
+    "handle": "1frencho"
+  }
 ]
 ```
 3) Haz commit de tu cambio. **No modifiques**: `teams/DEV-GEN-0.json`, `scripts/`, `.github/` ni `public/` — el workflow fallará si lo haces.
