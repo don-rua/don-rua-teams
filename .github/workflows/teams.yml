@@ -8,6 +8,9 @@ on:
       - '.github/workflows/teams.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   guard:
     runs-on: ubuntu-latest
