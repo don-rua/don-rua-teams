@@ -1,0 +1,49 @@
+name: Build ALL-GENS (v9)
+
+on:
+  push:
+    paths:
+      - 'teams/**'
+      - 'scripts/generate_all_gens_from_json.js'
+      - '.github/workflows/teams.yml'
+  workflow_dispatch:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail if protected files changed
+        run: |
+          set -e
+          if [ -n "$(git rev-parse HEAD^ 2>/dev/null)" ]; then
+            MODIFIED="$(git diff --name-only HEAD^ HEAD)"
+          else
+            MODIFIED="$(git ls-files)"
+          fi
+          echo "Modified files:"
+          echo "${MODIFIED}"
+          PROTECTED_REGEX='^(scripts/|public/|\.github/|teams/DEV-GEN-0\.json)$'
+          if echo "${MODIFIED}" | grep -E "${PROTECTED_REGEX}" >/dev/null; then
+            echo "::error::Attempt to modify protected paths (scripts/, public/, .github/, or teams/DEV-GEN-0.json)."
+            exit 1
+          fi
+          echo "Guard passed."
+  build:
+    runs-on: ubuntu-latest
+    needs: guard
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate ALL-GENS.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate_all_gens_from_json.js
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(teams): build ALL-GENS.svg (v9)'
+          file_pattern: public/ALL-GENS.svg
