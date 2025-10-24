@@ -50,6 +50,14 @@ function fontAttr() {
   return `'${THEME.fontFamily.replace(/'/g, "&apos;")}'`;
 }
 
+async function imageToBase64(url) {
+  const res = await fetch(url, { headers });
+  if (!res.ok) throw new Error(`Failed to fetch image: ${url}`);
+  const buffer = await res.arrayBuffer();
+  const base64 = Buffer.from(buffer).toString("base64");
+  return `data:image/png;base64,${base64}`;
+}
+
 async function ghUser(handle) {
   const url = `https://api.github.com/users/${encodeURIComponent(handle)}`;
   const res = await fetch(url, { headers });
@@ -62,12 +70,16 @@ async function ghUser(handle) {
     );
   }
   const j = await res.json();
+
+  const avatarUrl = `https://github.com/${encodeURIComponent(
+    handle
+  )}.png?size=${LAYOUT.AVATAR * 2}`;
+  const avatarBase64 = await imageToBase64(avatarUrl);
+
   return {
     handle,
     name: j.name && j.name.trim() ? j.name.trim() : handle,
-    avatar: `https://github.com/${encodeURIComponent(handle)}.png?size=${
-      LAYOUT.AVATAR * 2
-    }`,
+    avatar: avatarBase64, // 👈 Ahora es base64
   };
 }
 
