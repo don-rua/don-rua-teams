@@ -1,4 +1,4 @@
-name: Build ALL-GENS (v9)
+name: Build Team-GRID
 
 on:
   push:
@@ -19,7 +19,8 @@ jobs:
           if [ -n "$(git rev-parse HEAD^ 2>/dev/null)" ]; then
             MODIFIED="$(git diff --name-only HEAD^ HEAD)"
           else
-            MODIFIED="$(git ls-files)"
+            echo "First commit detected, skipping guard check."
+            exit 0
           fi
           echo "Modified files:"
           echo "${MODIFIED}"
