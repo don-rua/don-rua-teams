@@ -79,7 +79,7 @@ async function ghUser(handle) {
   return {
     handle,
     name: j.name && j.name.trim() ? j.name.trim() : handle,
-    avatar: avatarBase64, // 👈 Ahora es base64
+    avatar: avatarBase64,
   };
 }
 
